@@ -1,0 +1,20 @@
+Planetuga is a PHP RSS Feed aggregator, that strives to offer useful features to it's administrators and users.
+
+It includes:
+
+- Administrator, blogger, and user accounts
+- Possibility for the users to share their latest youtube videos, twitter updates, etc.
+- Poll system to approve new blogs
+- Task management system
+- Statistics (number of syndicated posts)
+- Actions log
+- Post-approval registration process assistant
+- Archive
+- Feeds based on a search term, category
+- JS Widget for use on external websites, featuring latest posts
+
+The code is far from being clean, or optimized.
+No setup instructions are provided, you'll probably have a hard time figuring it out :-)
+
+Expect code cleanups and optimizations in the near future.
+ 
