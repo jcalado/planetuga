@@ -1,0 +1,77 @@
+msgid	"Actions" 
+msgstr 	"Acções"
+
+msgid	"View" 
+msgstr 	"Ver"
+
+msgid	"Edit" 
+msgstr 	"Editar"
+
+msgid	"Delete" 
+msgstr 	"Apagar"
+
+msgid	"Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%" 
+msgstr 	"Página %page% de %pages%, mostrando %current% registos de um total de %count%, começando no registo %start% e terminando no registo %end%"
+
+msgid	"Users" 
+msgstr 	"Utilizadores"
+
+msgid	"Add user" 
+msgstr 	"Adicionar utilizador"
+
+msgid	"Edit user" 
+msgstr 	"Editar utilizador"
+
+msgid	"previous" 
+msgstr 	"Anterior"
+
+msgid	"next" 
+msgstr 	"Próxima"
+
+msgid	"Archive" 
+msgstr 	"Arquivo"
+
+msgid	"January" 
+msgstr 	"Janeiro"
+
+msgid	"February" 
+msgstr 	"Fevereiro"
+
+msgid	"March" 
+msgstr 	"Março"
+
+msgid	"April" 
+msgstr 	"Abril"
+
+msgid	"May" 
+msgstr 	"Maio"
+
+msgid	"June" 
+msgstr 	"Junho"
+
+msgid	"July" 
+msgstr 	"Julho"
+
+msgid	"August" 
+msgstr 	"Agosto"
+
+msgid	"September" 
+msgstr 	"Setembro"
+
+msgid	"October" 
+msgstr 	"Outubro"
+
+msgid	"November" 
+msgstr 	"Novembro"
+
+msgid	"December" 
+msgstr 	"Dezembro"
+
+msgid	"Featured posts" 
+msgstr 	"Artigos em destaque"
+
+
+
+
+
+

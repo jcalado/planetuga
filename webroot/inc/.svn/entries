@@ -1,0 +1,40 @@
+8
+
+dir
+17
+svn+ssh://jcalado@planetuga.com/var/svn-repos/planetuga/inc
+svn+ssh://jcalado@planetuga.com/var/svn-repos/planetuga
+
+
+
+2008-06-16T19:34:43.860238Z
+3
+jcalado
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ee7283cd-8f64-4df7-92ba-bd30042dce28
+
+simplepie.inc
+file
+
+
+
+
+2008-06-16T14:02:29.000000Z
+dae5016ecb0c5d5ed287b127ca50132f
+2008-06-16T19:34:43.860238Z
+3
+jcalado
+

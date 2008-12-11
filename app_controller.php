@@ -1,0 +1,20 @@
+<?
+	App::import('Core', 'l10n');
+class AppController extends Controller {
+
+	var $components = array('Acl', 'Auth');
+	
+
+
+	function beforeFilter() {
+	    //Configure AuthComponent
+	    $this->Auth->authorize = 'actions';
+	    $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
+	    $this->Auth->logoutRedirect = array('controller' => 'pages', 'action' => 'home');
+	    $this->Auth->loginRedirect = array('controller' => 'posts', 'action' => 'index');
+		$this->Auth->authError = "Não pode aceder a esta secção do site.";
+	}
+
+}
+
+?>

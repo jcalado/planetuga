@@ -1,0 +1,86 @@
+/* ----------------------------------------------------------------------------------------------------------
+
+    Output device: screen, projection
+
+    Author:     Nuvio (www.nuvio.cz)
+    Update:     2008-07-16, 19:25 GMT+1
+    Version:    2.2.6 (2008-07-13, 14:28 GMT+1)
+
+    Structure:
+        display; position; z-index; float; clear; width; height; overflow; margin; padding; border; background; align; font;
+
+    Content:
+
+        1) HTML tags
+        2) HTML styles
+        3) Layout
+        4-1) Page: Homepage
+        5) Others
+
+---------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------
+1) HTML tags
+---------------------------------------------------------------------------------------------------------- */
+
+body {background-color:#dcf6fe; color:#000}
+
+a {color:#3075FD;}
+a:hover {color:#0255F8;}
+
+h3.title {border-bottom:1px solid #DFDFDF; color:#000;}
+
+/* ----------------------------------------------------------------------------------------------------------
+2) HTML styles
+---------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------
+3) Layout
+---------------------------------------------------------------------------------------------------------- */
+
+#main {background-color:#FFF;}
+
+#header {background-color:#21C8FE; color:#FFF;}
+#header a {color:#FFF;}
+
+#tray {background-color:#2f2f2f; color:#FFF;}
+#tray a {color:#FFF;}
+#tray li#tray-active a {color:#21C8FE;}
+
+.nav a {border-top:1px solid #e5e5e5; background-color:#d0d0d0 !important; color:#000 !important;}
+.nav #nav-active a {background-color:#21c8fe !important; color:#FFF !important;}
+.nav #nav-active ul li a {border-top:1px solid #525252; background-color:#2f2f2f !important; color:#21c8fe !important;}
+
+#search {border-top:1px solid #f2f2f2; background-color:#d0d0d0;}
+#search-input {background:#FFF;}
+#search-submit {background:#21c8fe; color:#FFF;}
+
+#footer, #footer a {color:#000;}
+
+/* ----------------------------------------------------------------------------------------------------------
+4-1) Page: Homepage
+---------------------------------------------------------------------------------------------------------- */
+
+#topstory-top, #topstory {background-color:#dcf6fe;}
+#topstory-desc .info, #topstory-desc .info a, .article .article-desc .info, .article .article-desc .info a {color:#5F5F5F;}
+#topstory-desc .info a:hover, .article .article-desc .info a:hover {color:#2F2F2F;}
+#topstory-list {border-top:1px solid #f2fbfe; background-color:#c2edfc;}
+
+.box-01-top, .box-01-top-b {background-color:#21c8fe; color:#FFF;}
+.box-01-top-b .f-right {color:#FFF;}
+.box-01 .bg {border-top:1px solid #A8E7FB; border-bottom:1px solid #A8E7FB; background:#DAF4FD;}
+
+    .news dt {color:#3075FD;}
+    .news dd span {color:#45A2CB;}
+
+.box-02-top, .box-02-top-b {background-color:#c2edfc; color:#3075FD;}
+
+    .mostreaded span {color:#5F5F5F;}
+    .mostreaded a {color:#000;}
+    .mostreaded a:hover {color:#3075FD;}
+
+/* ----------------------------------------------------------------------------------------------------------
+5) Others
+---------------------------------------------------------------------------------------------------------- */
+
+.rss {color:#000;}

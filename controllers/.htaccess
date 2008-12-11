@@ -1,0 +1,12 @@
+AuthName "Restricted Area" 
+AuthType Basic 
+AuthUserFile /home/admin/.htpasswd 
+AuthGroupFile /dev/null 
+require valid-user
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
