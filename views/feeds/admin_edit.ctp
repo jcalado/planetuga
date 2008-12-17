@@ -1,4 +1,5 @@
-<h1>Edit Feed</h1>
+<fieldset>
+	<legend><? __('Edit Feed') ?></legend>
 <?php
 	echo $form->create('Feed', array('action' => 'edit'));
 	echo $form->input('name');
@@ -8,3 +9,4 @@
         echo $form->input('id', array('type'=>'hidden')); 
 	echo $form->end('Save Feed');
 ?>
+</fieldset>

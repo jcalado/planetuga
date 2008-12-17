@@ -42,5 +42,7 @@
 	// RSS
 	Router::connect('/feed', array('controller' => 'posts', 'action' => 'feed'));
 	
+	// Pub
+	Router::connect('/pub', array('controller' => 'pages', 'action' => 'display' ,'pub'));
 
 ?>

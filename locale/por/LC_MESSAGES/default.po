@@ -1,3 +1,21 @@
+msgid	"Planet" 
+msgstr 	"Planeta"
+
+msgid	"Administration" 
+msgstr 	"Administração"
+
+msgid	"Categories" 
+msgstr 	"Categorias"
+
+msgid	"Articles" 
+msgstr 	"Artigos"
+
+msgid	"Search" 
+msgstr 	"Procurar"
+
+msgid	"Hello" 
+msgstr 	"Olá"
+
 msgid	"Actions" 
 msgstr 	"Acções"
 
@@ -10,17 +28,35 @@ msgstr 	"Editar"
 msgid	"Delete" 
 msgstr 	"Apagar"
 
+msgid	"Title" 
+msgstr 	"Título"
+
+msgid	"Content" 
+msgstr 	"Conteúdo"
+
+msgid	"Date" 
+msgstr 	"Data"
+
+msgid	"by:" 
+msgstr 	"por"
+
 msgid	"Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%" 
 msgstr 	"Página %page% de %pages%, mostrando %current% registos de um total de %count%, começando no registo %start% e terminando no registo %end%"
 
 msgid	"Users" 
 msgstr 	"Utilizadores"
 
-msgid	"Add user" 
-msgstr 	"Adicionar utilizador"
+msgid	"Add User" 
+msgstr 	"Adicionar Utilizador"
 
 msgid	"Edit user" 
 msgstr 	"Editar utilizador"
+
+msgid	"List Users" 
+msgstr 	"Listar Utilizadores"
+
+msgid	"New User" 
+msgstr 	"Novo Utilizador"
 
 msgid	"previous" 
 msgstr 	"Anterior"
@@ -67,11 +103,104 @@ msgstr 	"Novembro"
 msgid	"December" 
 msgstr 	"Dezembro"
 
+msgid	"Featured Posts" 
+msgstr 	"Destaques"
+
 msgid	"Featured posts" 
-msgstr 	"Artigos em destaque"
+msgstr 	"Destaques"
+
+msgid	"Votes" 
+msgstr 	"Votos"
+
+msgid	"The Status is the result of all the positive votes minus the negative votes. Status >= 0 indicates that the blog will be aggregated." 
+msgstr 	"O Estado é o resultado de todos os votos positivos menos os votos negativos. Estado >= 0 indica que o blog será agregado."
 
 
+msgid	"Polls" 
+msgstr 	"Votações"
+
+msgid	"Status" 
+msgstr 	"Estado"
+
+msgid	"New Vote" 
+msgstr 	"Nova votação"
+
+msgid	"Add Vote" 
+msgstr 	"Adicionar Voto"
+
+msgid	"Add Poll" 
+msgstr 	"Adic. Votação"
+
+msgid	"List Polls" 
+msgstr 	"Listar Votações"
+
+msgid	"Name" 
+msgstr 	"Nome"
+
+msgid	"Submit" 
+msgstr 	"Enviar"
+
+msgid	"Description" 
+msgstr 	"Descrição"
+
+msgid	"Author" 
+msgstr 	"Autor"
+
+msgid	"Submit Date" 
+msgstr 	"Data de envio"
+
+msgid	"Limit Date" 
+msgstr 	"Data limite"
+
+msgid	"User" 
+msgstr 	"Utilizador"
 
 
+msgid	"Ready for aggregation" 
+msgstr 	"Prontos para agregação"
+
+msgid	"Task" 
+msgstr 	"Tarefa"
+
+msgid	"Tasks" 
+msgstr 	"Tarefas"
+
+msgid	"List Tasks" 
+msgstr 	"Listar Tarefas"
+
+msgid	"New Task" 
+msgstr 	"Nova Tarefa"
+
+msgid	"Add Task" 
+msgstr 	"Adicionar Tarefa"
+
+msgid	"Assigned To" 
+msgstr 	"Atribuído a"
+
+msgid	"Priority" 
+msgstr 	"Prioridade"
+
+msgid	"Subject" 
+msgstr 	"Assunto"
+
+msgid	"Created At" 
+msgstr 	"Criado em"
+
+msgid	"Deadline" 
+msgstr 	"Data Limite"
+
+msgid	"Add Announce" 
+msgstr 	"Novo Anúncio"
+
+msgid	"List Announces" 
+msgstr 	"Listar Anúncios"
+
+msgid	"Recent Posts" 
+msgstr 	"Artigos Recentes"
+
+msgid	"Posts updated." 
+msgstr 	"Posts actualizados."
 
 
+msgid	"You have already voted!" 
+msgstr 	"Você já votou neste blog!"

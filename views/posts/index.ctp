@@ -3,7 +3,7 @@
     <div id="content-left-in">
 
         <!-- Recent Articles -->
-        <h3 class="title">Artigos Recentes</h3>
+        <h3 class="title"><? __('Recent Posts')?></h3>
 
 			<?php foreach ($posts as $post): ?>
         	<div class="article box">
@@ -23,7 +23,9 @@
 						 echo "<a href='/posts/delete/$postid'><img src='/img/buttons/delete.png'/></a>";
 						 }
 					if ($groupid == "1") {
-						 echo "<a href='/posts/promote/$postid'><img src='/img/buttons/promote.png'/></a>";
+						echo "<a href='/posts/promote/$postid'><img src='/img/buttons/promote.png'/></a>";
+						echo "<a href='/posts/demote/$postid'><img src='/img/buttons/demote.png'/></a>";
+						echo "<a href='/posts/admin/delete/$postid'><img src='/img/buttons/delete.png'/></a>";
 						 }
 					($session->read('Auth.User.group_id'));
 					?>
@@ -36,11 +38,11 @@
 			
     </div> <!-- /content-left-in -->
 
-	<div class="pagination">
-		<?php echo $paginator->prev("Anterior"); ?>
+	<div class="paging">
+		<?php echo $paginator->prev('<< '.__('previous', true), array(), null);?>
 		<?php echo $paginator->numbers(array("separator" =>" ")); ?>
-		<?php echo $paginator->next("Seguinte"); ?>
-		
+		<?php echo $paginator->next(__('next', true).' >>', array(), null);?>
+
 		<?php
 		echo $paginator->counter(array(
 		'format' => __('%count% artigos indexados.', true)

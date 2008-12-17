@@ -13,6 +13,15 @@
 	
 	            <div class="article-desc">
 	                <h3><a href="<? echo $feed['Feed']['url'] ?>"><? echo $feed['Feed']['name']; ?></a></h3>
+					<? 
+					$userid = $session->read('Auth.User.id');
+					$groupid = $session->read('Auth.User.group_id');
+					$feedid = $feed['Feed']['id'];
+
+					if ($groupid == "1") {
+						echo "<a href='/admin/feeds/edit/$feedid'><img src='/img/buttons/edit.png'/></a>";
+						 }
+					?>
 	                <p class="info"><strong><? echo $feed['Feed']['feed'] ?></strong></p>
 	                <p class="nomb"><? echo $feed['Feed']['description'] ?></p>
 	            </div>
@@ -25,10 +34,16 @@
 
 
 
-	<div class="pagination">
-		<?php echo $paginator->prev("Anterior"); ?>
+	<div class="paging">
+		<?php echo $paginator->prev('<< '.__('previous', true), array(), null);?>
 		<?php echo $paginator->numbers(array("separator" =>" ")); ?>
-		<?php echo $paginator->next("Seguinte"); ?>
+		<?php echo $paginator->next(__('next', true).' >>', array(), null);?>
+
+		<?php
+		echo $paginator->counter(array(
+		'format' => __('%count% feeds.', true)
+		));
+		?>
 	</div>
 
 <hr class="noscreen" />

@@ -1,0 +1,1 @@
+<h1><? __('Posts updated.') ?></h1>

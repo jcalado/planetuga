@@ -1,10 +1,10 @@
-<h1>Posts featured</h1>
+<h1><? __('Featured Posts') ?></h1>
 <table>
 	<tr>
 		<th>ID</th>
-		<th>Name</th>
+		<th><? __('Name') ?></th>
 		<th>URL</th>
-		<th>Actions</th>
+		<th><? __('Actions') ?></th>
 	</tr>
 
 	<!-- Here is where we loop through our $posts array, printing out post info -->
@@ -25,6 +25,8 @@
 
 </table>
 
-<?php echo $paginator->prev("Anterior"); ?> 
-<?php echo $paginator->numbers(); ?> 
-<?php echo $paginator->next("Seguinte"); ?>
+<div class="paging">
+	<?php echo $paginator->prev('<< '.__('previous', true), array(), null);?>
+	<?php echo $paginator->numbers(array("separator" =>" ")); ?>
+	<?php echo $paginator->next(__('next', true).' >>', array(), null);?>
+</div>

@@ -1,4 +1,5 @@
-<h1>Adicionar Utilizador</h1>
+<fieldset>
+	<legend><? __('Add User')?></legend>
 <?php
 echo $form->create('User');
 echo $form->input('username');
@@ -8,3 +9,4 @@ echo $form->input('created_at');
 echo $form->input('name');
 echo $form->end('Adicionar');
 ?>
+</fieldset>

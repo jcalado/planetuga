@@ -26,7 +26,6 @@ foreach ($tasks as $task):
 		$class = ' class="altrow"';
 	}
 ?>
-<? pr($task) ?>
 	<tr<?php echo $class;?>>
 		<td>
 			<?php echo $task['Task']['id']; ?>
@@ -62,14 +61,18 @@ foreach ($tasks as $task):
 </table>
 </div>
 <div class="paging">
-	<?php echo $paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
- | 	<?php echo $paginator->numbers();?>
-	<?php echo $paginator->next(__('next', true).' >>', array(), null, array('class'=>'disabled'));?>
+	<?php echo $paginator->prev('<< '.__('previous', true), array(), null);?>
+	<?php echo $paginator->numbers(array("separator" =>" ")); ?>
+	<?php echo $paginator->next(__('next', true).' >>', array(), null);?>
+
+	<?php
+	echo $paginator->counter(array(
+	'format' => __('%count% tarefas.', true)
+	));
+	?>
 </div>
 <div class="actions">
 	<ul>
 		<li><?php echo $html->link(__('New Task', true), array('action'=>'add')); ?></li>
-		<li><?php echo $html->link(__('List Users', true), array('controller'=> 'users', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New User', true), array('controller'=> 'users', 'action'=>'add')); ?> </li>
 	</ul>
 </div>

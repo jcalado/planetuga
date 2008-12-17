@@ -26,10 +26,10 @@
 
 </table>
 
-<div class="pagination">
-	<?php echo $paginator->prev("Anterior"); ?>
+<div class="paging">
+	<?php echo $paginator->prev('<< '.__('previous', true), array(), null);?>
 	<?php echo $paginator->numbers(array("separator" =>" ")); ?>
-	<?php echo $paginator->next("Seguinte"); ?>
+	<?php echo $paginator->next(__('next', true).' >>', array(), null);?>
 </div>
 
 <h3><?php echo $html->link('Adicionar', "/admin/feeds/add")?></h3>

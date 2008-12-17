@@ -152,7 +152,7 @@ $paginator->options(array('url' => $this->passedArgs)); ?>
 			
     </div> <!-- /content-left-in -->
 
-	<div class="pagination">
+	<div class="paging">
 		<?php echo $paginator->prev("Anterior"); ?>
 		<?php echo $paginator->numbers(array("separator" =>" ")); ?>
 		<?php echo $paginator->next("Seguinte"); ?>

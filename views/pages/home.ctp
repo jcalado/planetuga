@@ -37,8 +37,8 @@
 
     <!-- Ads 125x125 -->
     <div class="box">
-        <span class="f-right"><a href="#"><img src="/img/pubaqui.gif" width="125" height="125" alt="Anuncie aqui" /></a></span>
-        <span class="f-left"><a href="#"><img src="/img/pubaqui.gif" width="125" height="125" alt="Anuncie aqui" /></a></span>
+		<span class="f-right"><a href="/pub"><img src="/img/pubaqui.gif" width="125" height="125" alt="Anuncie aqui" /></a></span>
+        <span class="f-left"><a href="/pub"><img src="/img/pubaqui.gif" width="125" height="125" alt="Anuncie aqui" /></a></span>
     </div>
     
     <!-- News -->

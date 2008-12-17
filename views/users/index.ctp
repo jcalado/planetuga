@@ -3,7 +3,7 @@
     <div id="content-left-in">
 
         <!-- Recent Articles -->
-        <h3 class="title">Membros</h3>
+        <h3 class="title"><? __('Users') ?></h3>
 
 			<?php foreach ($users as $user): ?>
         	<div class="article box">
@@ -23,7 +23,7 @@
   
 
     </div> <!-- /content-left-in -->
-	<div class="pagination">
+	<div class="paging">
 		<?php echo $paginator->prev("Anterior"); ?>
 		<?php echo $paginator->numbers(array("separator" =>" ")); ?>
 		<?php echo $paginator->next("Seguinte"); ?>

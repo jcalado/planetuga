@@ -15,9 +15,25 @@
 	
 	            <div class="article-desc">
 	                <p class="info"><strong><? echo date('d M // H:i',strtotime($posts['Post']['created_at'])); ?></strong>
-		 				por: <strong><a href="<? echo $posts['Feed']['url']?>"><? echo $posts['User']['name']?></a></strong><br/>
+		 				<? __('por:') ?> <strong><a href="<? echo $posts['Feed']['url']?>"><? echo $posts['User']['name']?></a></strong>
+						<? 
+						$userid = $session->read('Auth.User.id');
+						$groupid = $session->read('Auth.User.group_id');
+						$postid = $posts['Post']['id'];
+						 if ($posts['User']['id'] == $userid) {
+							 echo "<a href='/posts/delete/$postid'><img src='/img/buttons/delete.png'/></a>";
+							 }
+						if ($groupid == "1") {
+							echo "<a href='/posts/promote/$postid'><img src='/img/buttons/promote.png'/></a>";
+							echo "<a href='/posts/demote/$postid'><img src='/img/buttons/demote.png'/></a>";
+							echo "<a href='/posts/admin/delete/$postid'><img src='/img/buttons/delete.png'/></a>";
+							 }
+						($session->read('Auth.User.group_id'));
+						?>
+						<br/>
 						<? echo $bookmark->getBookMarks($posts['Post']['title'],$posts['Post']['permalink']) ?>
-		</p>
+						
+					</p>
 	                <p class="nomb"><? echo TextHelper::truncate($posts['Post']['content'],400,'...',true,true);  ?></p>
 					<p class="categories"><img src="/img/tag.png"/> <? $cats = explode(",", $posts['Post']['category']); foreach ($cats as $category) {
 						$categoryname = str_replace("&amp;amp;", "e", $category);

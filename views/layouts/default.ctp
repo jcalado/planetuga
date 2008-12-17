@@ -15,12 +15,25 @@
 	<script type="text/javascript" src="/js/jquery.innerfade.js"></script>
 	<script type="text/javascript" src="/js/jquery-ui.packed.js"></script>
 	<script type="text/javascript" src="/js/jquery.collapsor.min.js"></script>
+	<script type="text/javascript" src="/js/superfish.js"></script>
+	
+	<script type="text/javascript">
+
+	// initialise plugins
+	jQuery(function(){
+		jQuery('ul.box').superfish();
+	});
+
+	</script>
+	
 
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/main.css" />
     <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/css/main-msie.css" /><![endif]-->
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" media="print" type="text/css" href="/css/print.css" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/superfish.css" />
+
 
     <title><? echo "$title_for_layout"; ?></title>
 </head>
@@ -37,15 +50,64 @@
 
     </div> <!-- /header -->
     
+
     <!-- Tray -->
     <div id="tray">
 
-        <ul class="box">
-            <li id="tray-active"><a href="/">Homepage</a></li> <!-- Active page -->
-            <li><a href="/posts">Planeta</a></li>
-            <li><a href="/users">Utilizadores</a></li>
-            <li><a href="/feeds">Feeds</a></li>
-            <li><a href="/posts/archive">Arquivo</a></li>
+        <ul class="box sf-menu">
+            <li id="tray-active"><a href="/"><? __('Homepage') ?></a></li> <!-- Active page -->
+            <li><a href="/posts"><? __('Planet') ?></a></li>
+            <li><a href="/users"><? __('Users') ?></a></li>
+            <li><a href="/feeds"><? __('Feeds') ?></a></li>
+            <li><a href="/posts/archive"><? __('Archive') ?></a></li>
+
+			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
+
+			<li><a href="/admin/"><? __('Administration')?></a>
+				<ul>
+					<li>
+						<a href="/admin/announces"><? __('Announces')?></a>
+						<ul>
+							<li><a href="/admin/announces/index"><? __('List Announces')?></a></li>
+							<li><a href="/admin/announces/add"><? __('Add Announce')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/posts"><? __('Posts')?></a>
+						<ul>
+							<li><a href="/admin/posts/featured"><? __('Featured Posts')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/users"><? __('Users')?></a>
+						<ul>
+							<li><a href="/admin/users/index"><? __('List Users')?></a></li>
+							<li><a href="/admin/users/add"><? __('Add User')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/votes"><? __('Votes')?></a>
+						<ul>
+							<li><a href="/admin/votes/index"><? __('List Polls')?></a></li>
+							<li><a href="/admin/votes/add"><? __('Add Poll')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/tasks"><? __('Tasks')?></a>
+						<ul>
+							<li><a href="/admin/tasks/index"><? __('List Tasks')?></a></li>
+							<li><a href="/admin/tasks/add"><? __('Add Task')?></a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<? } ?>
+			
+			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "2" || $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
+
+			<li><a href="/votes/"><? __('Polls')?></a></li>
+			
+			<? } ?>
         </ul>
 
     <hr class="noscreen" />
@@ -78,7 +140,7 @@
             
             <!-- Categories -->
             <div class="padding">
-                <h4 class="nom">Categorias</h4>
+                <h4 class="nom"><? __('Categories')?></h4>
             </div> <!-- /padding -->
             
             <ul class="nav">
@@ -106,7 +168,7 @@
                 <h4 class="margin">RSS</h4>
                 
                 <p class="nom">
-                    <a href="/feed" class="rss">Artigos</a><br />
+                    <a href="/feed" class="rss"><? __('Articles') ?></a><br />
                 </p>
                
 				<h4 class="login">Login</h4>
@@ -121,13 +183,13 @@
 						echo "<p><a href='/users/register'>Registar</a></p>";
 						echo "<p><a href='/users/reset'>Recuperar password</a></p>";
 					} else {
-						echo "Olá, " . $_SESSION["Auth"]["User"]["name"] . "<br/>";
+						echo __('Hello') . ", " . $_SESSION["Auth"]["User"]["name"] . "<br/>";
 						echo "<span><a href='/users/logout'>Sair</a></span>";
 					}
 					?>
 					
 				 
-                <h4 class="margin">Procurar</h4>
+                <h4 class="margin"><? __('Search') ?></h4>
 
                 <form action="/posts/search" method="get">
                     <div id="search" class="box">

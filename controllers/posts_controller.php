@@ -13,10 +13,6 @@ class PostsController extends AppController {
 	}
 
 	function index() {
-        $posts = $this->Post->find('all'); 
-        if(isset($this->params['requested'])) { 
-             return $posts; 
-        } 
 		$this->set('posts', $this->paginate('Post')); 
 
 	}
@@ -180,11 +176,6 @@ class PostsController extends AppController {
 		
 		require_once('inc/simplepie.inc');
 
-		//require "Arc90/Service/Twitter.php";
-		//$twitter = new Arc90_Service_Twitter('planetuga', 'ik3tnYa');
-
-		$numero = 0;
-
 		// List all feeds
 		$sql = mysql_query("SELECT * FROM feeds ORDER BY id;");
 			$numberfeeds = mysql_num_rows($sql);
@@ -241,22 +232,15 @@ class PostsController extends AppController {
 
 					// Shorten the URL using tinyURL :)
 					//$shortlink = $this->Tinyurl->shorten("http://cake.planetuga.com/posts/view/$id");
-
-					// echo
-					echo "$permalink<br/>\n";
 					
 					// Tweet it
 					//$this->Twitter->status_update("$title - $shortlink");
 
 				} 
 			}
-		$numero++;
-		echo "Actualizados $numero: $feed_name<br/>\n\n";
-		echo "-----------------------";
 
 		}
-		echo "Actualizei $numero de um total de $numberfeeds feeds.";
-		
+	
 	}
 	
 	

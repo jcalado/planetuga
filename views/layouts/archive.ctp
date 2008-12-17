@@ -12,15 +12,28 @@
     <meta name="keywords" content="..." />
 
 	<script type="text/javascript" src="/js/jquery.js"></script>
-	<script type="text/javascript" src="/js/jquery.cycle.js"></script>
 	<script type="text/javascript" src="/js/jquery-ui.packed.js"></script>
 	<script type="text/javascript" src="/js/jquery.collapsor.min.js"></script>
+	<script type="text/javascript" src="/js/superfish.js"></script>
+	
+	<script type="text/javascript">
+
+	// initialise plugins
+	jQuery(function(){
+		jQuery('ul.box').superfish();
+	});
+
+	</script>
+	
+	
 
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/main.css" />
     <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/css/main-msie.css" /><![endif]-->
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" media="print" type="text/css" href="/css/print.css" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/superfish.css" />
+
 
     <title><? echo "$title_for_layout"; ?></title>
 </head>
@@ -40,12 +53,53 @@
     <!-- Tray -->
     <div id="tray">
 
-        <ul class="box">
-            <li><a href="/">Homepage</a></li> <!-- Active page -->
+        <ul class="box sf-menu">
+            <li id="tray-active"><a href="/">Homepage</a></li> <!-- Active page -->
             <li><a href="/posts">Planeta</a></li>
             <li><a href="/users">Utilizadores</a></li>
             <li><a href="/feeds">Feeds</a></li>
-            <li id="tray-active"><a href="/posts/archive">Arquivo</a></li>
+            <li><a href="/posts/archive">Arquivo</a></li>
+
+			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
+
+			<li><a href="/admin/">Administração</a>
+				<ul>
+					<li>
+						<a href="/admin/posts"><? __('Posts')?></a>
+						<ul>
+							<li><a href="/admin/posts/featured"><? __('Featured Posts')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/users"><? __('Users')?></a>
+						<ul>
+							<li><a href="/admin/users/index"><? __('List Users')?></a></li>
+							<li><a href="/admin/users/add"><? __('Add User')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/votes"><? __('Votes')?></a>
+						<ul>
+							<li><a href="/admin/votes/index"><? __('List Polls')?></a></li>
+							<li><a href="/admin/votes/add"><? __('Add Poll')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/tasks"><? __('Tasks')?></a>
+						<ul>
+							<li><a href="/admin/tasks/index"><? __('List Tasks')?></a></li>
+							<li><a href="/admin/tasks/add"><? __('Add Task')?></a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<? } ?>
+			
+			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "2") { ?>
+
+			<li><a href="/votes/">Votes</a></li>
+			
+			<? } ?>
         </ul>
 
     <hr class="noscreen" />
