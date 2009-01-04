@@ -9,7 +9,7 @@ class PostsController extends AppController {
 
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    $this->Auth->allowedActions = array('index', 'view','update','top','latest','recent','featured','category','feed','test');
+	    $this->Auth->allowedActions = array('index', 'view','update','top','latest','recent','featured','category','feed','search');
 	}
 
 	function index() {
