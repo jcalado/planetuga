@@ -20,8 +20,8 @@
 		<td><?php echo $announce['Announce']['date']; ?></td>
 		<td><?php echo $announce['Announce']['content']; ?></td>
 		<td>
-			<?php echo $html->link('Edit', "/admin/announces/edit/{$announce['Announce']['id']}")?>
-			<?php echo $html->link('Delete', "/admin/announces/delete/{$announce['Announce']['id']}", null, 'Are you sure?' )?>
+			<?php echo $html->link('<img src="/img/buttons/edit.png"/>', array('action'=>'edit', $announce['Announce']['id']), array(),false,false); ?>
+			<?php echo $html->link('<img src="/img/buttons/delete.png"/>', array('action'=>'delete', $announce['Announce']['id']), array(),false,false); ?>			
 		</td>
 	</tr>
 	<?php endforeach; ?>

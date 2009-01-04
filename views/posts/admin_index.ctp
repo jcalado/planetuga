@@ -18,8 +18,8 @@
 		</td>
 		<td><?php echo $html->link($post['Post']['permalink'],$post['Post']['permalink']); ?></td>
 		<td>
-			<?php echo $html->link('Edit', "/admin/posts/edit/{$post['Post']['id']}")?>
-			<?php echo $html->link('Delete', "/admin/posts/delete/{$post['Post']['id']}", null, 'Are you sure?' )?>
+			<?php echo $html->link('<img src="/img/buttons/edit.png"/>', array('action'=>'edit', $post['Post']['id']), array(),false,false); ?>
+			<?php echo $html->link('<img src="/img/buttons/delete.png"/>', array('action'=>'delete', $post['Post']['id']), array(),false,false); ?>
 		</td>
 	</tr>
 	<?php endforeach; ?>

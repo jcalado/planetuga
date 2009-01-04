@@ -44,18 +44,18 @@ foreach ($users as $user):
 			<?php echo $user['User']['name']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $html->link(__('View', true), array('action'=>'view', $user['User']['id'])); ?>
-			<?php echo $html->link(__('Edit', true), array('action'=>'edit', $user['User']['id'])); ?>
-			<?php echo $html->link(__('Delete', true), array('action'=>'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?>
+			<?php echo $html->link('<img src="/img/buttons/view.png"/>', array('action'=>'view', $user['User']['id']), array(),false,false); ?>
+			<?php echo $html->link('<img src="/img/buttons/edit.png"/>', array('action'=>'edit', $user['User']['id']), array(),false,false); ?>
+			<?php echo $html->link('<img src="/img/buttons/delete.png"/>', array('action'=>'delete', $user['User']['id']), array(),false,false); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
 </table>
 </div>
 <div class="paging">
-	<?php echo $paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
- | 	<?php echo $paginator->numbers();?>
-	<?php echo $paginator->next(__('next', true).' >>', array(), null, array('class'=>'disabled'));?>
+	<?php echo $paginator->prev('<< '.__('previous', true), array(), null);?>
+	<?php echo $paginator->numbers(array("separator" =>" ")); ?>
+	<?php echo $paginator->next(__('next', true).' >>', array(), null);?>
 </div>
 <div class="actions">
 	<ul>
