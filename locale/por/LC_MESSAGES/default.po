@@ -25,6 +25,9 @@ msgstr 	"Ver"
 msgid	"Edit" 
 msgstr 	"Editar"
 
+msgid	"Add"
+msgstr	"Adicionar"
+
 msgid	"Delete" 
 msgstr 	"Apagar"
 
@@ -46,14 +49,8 @@ msgstr 	"Página %page% de %pages%, mostrando %current% registos de um total de 
 msgid	"Users" 
 msgstr 	"Utilizadores"
 
-msgid	"Add User" 
-msgstr 	"Adicionar Utilizador"
-
-msgid	"Edit user" 
-msgstr 	"Editar utilizador"
-
-msgid	"List Users" 
-msgstr 	"Listar Utilizadores"
+msgid	"List" 
+msgstr 	"Lista"
 
 msgid	"New User" 
 msgstr 	"Novo Utilizador"
@@ -204,3 +201,15 @@ msgstr 	"Posts actualizados."
 
 msgid	"You have already voted!" 
 msgstr 	"Você já votou neste blog!"
+
+msgid	"Add Feed" 
+msgstr 	"Adicionar Feed"
+
+msgid	"Profile" 
+msgstr 	"Perfil"
+
+msgid	"Change Avatar" 
+msgstr 	"Alterar Avatar"
+
+msgid	"Announces" 
+msgstr 	"Anúncios"
