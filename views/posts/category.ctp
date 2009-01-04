@@ -28,7 +28,7 @@ $paginator->options(array('url' => $this->passedArgs)); ?>
 						if ($groupid == "1") {
 							echo "<a href='/posts/promote/$postid'><img src='/img/buttons/promote.png'/></a>";
 							echo "<a href='/posts/demote/$postid'><img src='/img/buttons/demote.png'/></a>";
-							echo "<a href='/posts/admin/delete/$postid'><img src='/img/buttons/delete.png'/></a>";
+							echo "<a href='/admin/posts/delete/$postid'><img src='/img/buttons/delete.png'/></a>";
 							 }
 						($session->read('Auth.User.group_id'));
 						?>
