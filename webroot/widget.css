@@ -1,0 +1,57 @@
+/*
+Wiget Planetuga
+Joel Calado
+*/
+#planetugawidget {
+	width: 96%;
+	margin: 2%;
+	background-color: #fff;
+	color: #333;
+	margin-bottom: 15px;
+	border: 1px solid #abc5ce;
+}
+#planetugawidget a {
+	color: #176ad7;
+	text-decoration: none;
+	background-color: transparent;
+}
+#planetugawidget a:visited {
+	background-color: transparent;
+	color: #000;
+}
+#planetugawidget a:hover {
+	color: #000;
+}
+#planetugawidget .titulo {
+	margin: 0px;
+	padding: 5px;
+	border-bottom: 2px solid #abc5ce;
+	text-align: left;
+	background-color: #e4f2f4;
+}
+#planetugawidget ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: left;
+}
+#planetugawidget ul li {
+	margin: 0 2px;
+	border-bottom: 1px dashed #bfbfbf;
+	list-style-type: none;
+}
+#planetugawidget ul li a {
+	display: block;
+	text-decoration: none;
+	padding: 2px;
+	background-color: #fff;
+	color: #036;
+}
+#planetugawidget ul li a:visited {
+	background-color: #eee;
+	color: #000;
+}
+#planetugawidget ul li a:hover {
+	background-color: #bfe8f2;
+	color: #000;
+}
