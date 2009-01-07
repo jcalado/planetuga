@@ -1,5 +1,7 @@
 <?
 	App::import('Core', 'l10n');
+	App::import('Sanitize');
+	
 class AppController extends Controller {
 
 	var $components = array('Acl', 'Auth');
