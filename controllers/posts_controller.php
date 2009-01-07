@@ -9,7 +9,7 @@ class PostsController extends AppController {
 
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    $this->Auth->allowedActions = array('index', 'view','update','top','latest','recent','featured','category','feed','search');
+	    $this->Auth->allowedActions = array('index', 'view','update','top','latest','recent','featured','category','feed','search','widget');
 	}
 
 	function index() {
@@ -92,8 +92,7 @@ class PostsController extends AppController {
 
 	        if (isset($this->passedArgs)) { 
 
-	            $input = $this->passedArgs[0]; 
-
+	            $input = $_GET["q"];
 	            App::import('Sanitize'); 
 	            $q = Sanitize::escape($input); 
 
@@ -123,12 +122,19 @@ class PostsController extends AppController {
 	}
 
 
-	function feed() 
-    { 
-        $this->layout = 'xml';
+	function feed(){ 
+
         $this->set('posts', $this->Post->find('all',array( 
 		    'order' => 'Post.created_at DESC',
 		 	'limit' => '50'
+		)));
+    }
+
+	function widget(){ 
+		$this->layout = "clean";
+        $this->set('posts', $this->Post->find('all',array( 
+		    'order' => 'Post.created_at DESC',
+		 	'limit' => '10'
 		)));
     }
 
