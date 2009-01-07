@@ -41,6 +41,11 @@ class UsersController extends AppController
 	    $this->Acl->deny($group, 'controllers');
 	    $this->Acl->allow($group, 'controllers/Posts');
 	    $this->Acl->allow($group, 'controllers/Users/view');
+		$this->Acl->allow($group, 'controllers/Feeds/index');
+		$this->Acl->allow($group, 'controllers/Users/index');
+		$this->Acl->allow($group, 'controllers/Users/changepassword');
+		$this->Acl->allow($group, 'controllers/Users/avatar');
+		
 
 	    // Users 
 	    $group->id = 3;
@@ -52,11 +57,10 @@ class UsersController extends AppController
 		
 	    $this->Acl->allow($group, 'controllers/Posts/index');
 		$this->Acl->allow($group, 'controllers/Posts/archive');
-		
+		$this->Acl->allow($group, 'controllers/Posts/widget');
+				
 	    $this->Acl->allow($group, 'controllers/Users/view');
-		
-		
-
+		$this->Acl->allow($group, 'controllers/Users/changepassword');
 	}
 	
 	function index() {
@@ -181,7 +185,7 @@ class UsersController extends AppController
 			  {
 			    if (!empty($this->data['User']['Avatar']['name'])) {
 			      $fileName = $this->Auth->user('id');
-				move_uploaded_file($this->data['User']['Avatar']['tmp_name'], '/home/admin/domains/planetuga.com/public_html/beta/app/webroot/img/avatars/'.$fileName.'.png');
+				move_uploaded_file($this->data['User']['Avatar']['tmp_name'], '/home/admin/domains/planetuga.com/public_html/app/webroot/img/avatars/'.$fileName.'.png');
 				  $this->Session->setFlash('O seu avatar foi actualizado.');
 				}  
 
