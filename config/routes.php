@@ -45,4 +45,7 @@
 	// Pub
 	Router::connect('/pub', array('controller' => 'pages', 'action' => 'display' ,'pub'));
 
+	// Legacy posts (planetuga.com)
+	Router::connect('/post/*', array('controller' => 'posts', 'action' => 'view'));
+
 ?>

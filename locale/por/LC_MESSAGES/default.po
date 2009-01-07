@@ -211,5 +211,8 @@ msgstr 	"Perfil"
 msgid	"Change Avatar" 
 msgstr 	"Alterar Avatar"
 
+msgid	"Change Password" 
+msgstr 	"Alterar Password"
+
 msgid	"Announces" 
 msgstr 	"Anúncios"
