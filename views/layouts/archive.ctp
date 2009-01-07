@@ -54,16 +54,32 @@
     <div id="tray">
 
         <ul class="box sf-menu">
-            <li id="tray-active"><a href="/">Homepage</a></li> <!-- Active page -->
-            <li><a href="/posts">Planeta</a></li>
-            <li><a href="/users">Utilizadores</a></li>
-            <li><a href="/feeds">Feeds</a></li>
-            <li><a href="/posts/archive">Arquivo</a></li>
+            <li id="tray-active"><a href="/"><? __('Homepage') ?></a></li> <!-- Active page -->
+            <li><a href="/posts"><? __('Planet') ?></a></li>
+            <li><a href="/users"><? __('Users') ?></a></li>
+            <li><a href="/feeds"><? __('Feeds') ?></a></li>
+            <li><a href="/posts/archive"><? __('Archive') ?></a></li>
+
+			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "2" || $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
+				
+			<li><a href="#"><? __('Profile')?></a>
+				<ul>
+					<li><a href="/users/avatar"><? __('Change Avatar')?></a></li>
+				</ul>	
+			</li>
+			<? } ?>
 
 			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
 
-			<li><a href="/admin/">Administração</a>
+			<li><a href="/admin/"><? __('Administration')?></a>
 				<ul>
+					<li>
+						<a href="/admin/announces"><? __('Announces')?></a>
+						<ul>
+							<li><a href="/admin/announces/index"><? __('List Announces')?></a></li>
+							<li><a href="/admin/announces/add"><? __('Add Announce')?></a></li>
+						</ul>
+					</li>
 					<li>
 						<a href="/admin/posts"><? __('Posts')?></a>
 						<ul>
@@ -73,8 +89,15 @@
 					<li>
 						<a href="/admin/users"><? __('Users')?></a>
 						<ul>
-							<li><a href="/admin/users/index"><? __('List Users')?></a></li>
-							<li><a href="/admin/users/add"><? __('Add User')?></a></li>
+							<li><a href="/admin/users/index"><? __('List')?></a></li>
+							<li><a href="/admin/users/add"><? __('Add')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/feeds"><? __('Feeds')?></a>
+						<ul>
+							<li><a href="/admin/feeds/index"><? __('List Feeds')?></a></li>
+							<li><a href="/admin/feeds/add"><? __('Add Feed')?></a></li>
 						</ul>
 					</li>
 					<li>
@@ -95,9 +118,9 @@
 			</li>
 			<? } ?>
 			
-			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "2") { ?>
+			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "2" || $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
 
-			<li><a href="/votes/">Votes</a></li>
+			<li><a href="/votes/"><? __('Polls')?></a></li>
 			
 			<? } ?>
         </ul>
@@ -136,6 +159,433 @@
             </div> <!-- /padding -->
             
             <ul class="nav">
+				<li><a href="/posts/archive/2009">2009</a>
+					<ul>
+				        <li><a href="/posts/archive/2009-01"><? __('January') ?></a>
+							<ul>
+									<li><a href="/posts/archive/2009/01/01">Dia 1</a></li>
+									<li><a href="/posts/archive/2009/01/02">Dia 2</a></li>
+									<li><a href="/posts/archive/2009/01/03">Dia 3</a></li>
+									<li><a href="/posts/archive/2009/01/04">Dia 4</a></li>
+									<li><a href="/posts/archive/2009/01/05">Dia 5</a></li>
+									<li><a href="/posts/archive/2009/01/06">Dia 6</a></li>
+									<li><a href="/posts/archive/2009/01/07">Dia 7</a></li>
+									<li><a href="/posts/archive/2009/01/08">Dia 8</a></li>
+									<li><a href="/posts/archive/2009/01/09">Dia 9</a></li>
+									<li><a href="/posts/archive/2009/01/10">Dia 10</a></li>
+									<li><a href="/posts/archive/2009/01/11">Dia 11</a></li>
+									<li><a href="/posts/archive/2009/01/12">Dia 12</a></li>
+									<li><a href="/posts/archive/2009/01/13">Dia 13</a></li>
+									<li><a href="/posts/archive/2009/01/14">Dia 14</a></li>
+									<li><a href="/posts/archive/2009/01/15">Dia 15</a></li>
+									<li><a href="/posts/archive/2009/01/16">Dia 16</a></li>
+									<li><a href="/posts/archive/2009/01/17">Dia 17</a></li>
+									<li><a href="/posts/archive/2009/01/18">Dia 18</a></li>
+									<li><a href="/posts/archive/2009/01/19">Dia 19</a></li>
+									<li><a href="/posts/archive/2009/01/20">Dia 20</a></li>
+									<li><a href="/posts/archive/2009/01/21">Dia 21</a></li>
+									<li><a href="/posts/archive/2009/01/22">Dia 22</a></li>
+									<li><a href="/posts/archive/2009/01/23">Dia 23</a></li>
+									<li><a href="/posts/archive/2009/01/24">Dia 24</a></li>
+									<li><a href="/posts/archive/2009/01/25">Dia 25</a></li>
+									<li><a href="/posts/archive/2009/01/26">Dia 26</a></li>
+									<li><a href="/posts/archive/2009/01/27">Dia 27</a></li>
+									<li><a href="/posts/archive/2009/01/28">Dia 28</a></li>
+									<li><a href="/posts/archive/2009/01/29">Dia 29</a></li>
+									<li><a href="/posts/archive/2009/01/30">Dia 30</a></li>
+									<li><a href="/posts/archive/2009/01/31">Dia 31</a></li>
+								</ul>
+						</li>
+				        <li><a href="/posts/archive/2009/02"><? __('February') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/02/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/02/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/02/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/02/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/02/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/02/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/02/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/02/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/02/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/02/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/02/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/02/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/02/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/02/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/02/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/02/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/02/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/02/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/02/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/02/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/02/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/02/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/02/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/02/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/02/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/02/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/02/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/02/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/02/29">Dia 29</a></li>
+							</ul>
+						</li>
+						<li><a href="/posts/archive/2009/03"><? __('March') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/03/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/03/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/03/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/03/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/03/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/03/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/03/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/03/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/03/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/03/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/03/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/03/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/03/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/03/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/03/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/03/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/03/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/03/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/03/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/03/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/03/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/03/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/03/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/03/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/03/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/03/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/03/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/03/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/03/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/03/30">Dia 30</a></li>
+								<li><a href="/posts/archive/2009/03/30">Dia 31</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/04"><? __('April') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/04/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/04/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/04/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/04/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/04/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/04/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/04/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/04/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/04/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/04/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/04/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/04/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/04/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/04/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/04/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/04/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/04/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/04/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/04/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/04/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/04/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/04/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/04/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/04/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/04/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/04/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/04/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/04/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/04/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/04/30">Dia 30</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/05"><? __('May') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/05/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/05/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/05/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/05/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/05/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/05/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/05/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/05/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/05/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/05/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/05/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/05/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/05/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/05/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/05/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/05/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/05/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/05/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/05/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/05/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/05/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/05/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/05/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/05/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/05/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/05/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/05/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/05/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/05/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/05/30">Dia 30</a></li>
+								<li><a href="/posts/archive/2009/05/31">Dia 31</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/06"><? __('June') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/06/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/06/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/06/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/06/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/06/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/06/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/06/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/06/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/06/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/06/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/06/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/06/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/06/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/06/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/06/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/06/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/06/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/06/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/06/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/06/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/06/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/06/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/06/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/06/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/06/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/06/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/06/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/06/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/06/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/06/30">Dia 30</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/07"><? __('July') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/07/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/07/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/07/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/07/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/07/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/07/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/07/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/07/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/07/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/07/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/07/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/07/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/07/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/07/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/07/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/07/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/07/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/07/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/07/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/07/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/07/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/07/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/07/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/07/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/07/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/07/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/07/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/07/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/07/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/07/30">Dia 30</a></li>
+								<li><a href="/posts/archive/2009/07/31">Dia 31</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/08"><? __('August') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/08/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/08/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/08/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/08/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/08/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/08/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/08/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/08/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/08/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/08/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/08/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/08/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/08/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/08/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/08/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/08/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/08/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/08/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/08/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/08/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/08/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/08/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/08/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/08/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/08/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/08/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/08/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/08/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/08/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/08/30">Dia 30</a></li>
+								<li><a href="/posts/archive/2009/08/31">Dia 31</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/09"><? __('September') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/09/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/09/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/09/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/09/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/09/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/09/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/09/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/09/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/09/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/09/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/09/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/09/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/09/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/09/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/09/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/09/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/09/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/09/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/09/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/09/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/09/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/09/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/09/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/09/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/09/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/09/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/09/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/09/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/09/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/09/30">Dia 30</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/10"><? __('October') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/10/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/10/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/10/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/10/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/10/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/10/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/10/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/10/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/10/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/10/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/10/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/10/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/10/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/10/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/10/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/10/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/10/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/10/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/10/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/10/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/10/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/10/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/10/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/10/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/10/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/10/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/10/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/10/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/10/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/10/30">Dia 30</a></li>
+								<li><a href="/posts/archive/2009/10/31">Dia 31</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/11"><? __('November') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/11/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/11/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/11/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/11/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/11/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/11/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/11/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/11/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/11/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/11/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/11/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/11/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/11/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/11/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/11/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/11/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/11/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/11/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/11/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/11/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/11/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/11/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/11/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/11/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/11/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/11/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/11/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/11/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/11/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/11/30">Dia 30</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/posts/archive/2009/12"><? __('December') ?></a>
+							<ul>
+								<li><a href="/posts/archive/2009/12/01">Dia 1</a></li>
+								<li><a href="/posts/archive/2009/12/02">Dia 2</a></li>
+								<li><a href="/posts/archive/2009/12/03">Dia 3</a></li>
+								<li><a href="/posts/archive/2009/12/04">Dia 4</a></li>
+								<li><a href="/posts/archive/2009/12/05">Dia 5</a></li>
+								<li><a href="/posts/archive/2009/12/06">Dia 6</a></li>
+								<li><a href="/posts/archive/2009/12/07">Dia 7</a></li>
+								<li><a href="/posts/archive/2009/12/08">Dia 8</a></li>
+								<li><a href="/posts/archive/2009/12/09">Dia 9</a></li>
+								<li><a href="/posts/archive/2009/12/10">Dia 10</a></li>
+								<li><a href="/posts/archive/2009/12/11">Dia 11</a></li>
+								<li><a href="/posts/archive/2009/12/12">Dia 12</a></li>
+								<li><a href="/posts/archive/2009/12/13">Dia 13</a></li>
+								<li><a href="/posts/archive/2009/12/14">Dia 14</a></li>
+								<li><a href="/posts/archive/2009/12/15">Dia 15</a></li>
+								<li><a href="/posts/archive/2009/12/16">Dia 16</a></li>
+								<li><a href="/posts/archive/2009/12/17">Dia 17</a></li>
+								<li><a href="/posts/archive/2009/12/18">Dia 18</a></li>
+								<li><a href="/posts/archive/2009/12/19">Dia 19</a></li>
+								<li><a href="/posts/archive/2009/12/20">Dia 20</a></li>
+								<li><a href="/posts/archive/2009/12/21">Dia 21</a></li>
+								<li><a href="/posts/archive/2009/12/22">Dia 22</a></li>
+								<li><a href="/posts/archive/2009/12/23">Dia 23</a></li>
+								<li><a href="/posts/archive/2009/12/24">Dia 24</a></li>
+								<li><a href="/posts/archive/2009/12/25">Dia 25</a></li>
+								<li><a href="/posts/archive/2009/12/26">Dia 26</a></li>
+								<li><a href="/posts/archive/2009/12/27">Dia 27</a></li>
+								<li><a href="/posts/archive/2009/12/28">Dia 28</a></li>
+								<li><a href="/posts/archive/2009/12/29">Dia 29</a></li>
+								<li><a href="/posts/archive/2009/12/30">Dia 30</a></li>
+								<li><a href="/posts/archive/2009/12/31">Dia 31</a></li>
+							</ul>
+						</li>
+				    </ul>
+				</li>
                 <li><a href="/posts/archive/2008">2008</a> <!-- Active -->
                     <ul>
                         <li><a href="/posts/archive/2008-01"><? __('January') ?></a>
@@ -1048,6 +1498,30 @@
         <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
         <p>Copyright &copy;&nbsp;2008 <strong><a href="#">Planetuga</a></strong>, Código: &copy;&nbsp;2008 <strong><a href="http://www.joelcalado.com">Joel Calado</a></strong></p>
+
+		<div id='banners'>
+			<p class='banners'>
+				<a href='http://feeds.feedburner.com/planetuga' title='Subscrever a Feed do Planetuga'><img src='http://tricubo.com/wp-content/themes/tricubo/imagens/feedburner.png' alt='Subscrever a Feed do Planetuga' /></a>
+		<a href='http://jigsaw.w3.org/css-validator/check/referer' title='Validar CSS'><img src='http://tricubo.com/wp-content/themes/tricubo/imagens/css_valido.png' alt='Validar CSS' /></a>
+		<a href='http://validator.w3.org/check/referer' title='Validar XHTML'><img src='http://tricubo.com/wp-content/themes/tricubo/imagens/xhtml_valido.png' alt='Validar XHTML' /></a>
+		<a href='http://creativecommons.org/licenses/by-nc-sa/2.5/pt/deed.pt_PT' title='Licença Creative Commons' ><img src='http://tricubo.com/wp-content/themes/tricubo/imagens/creative_commons.png' alt='Licença Creative Commons' /></a>
+		<a href='http://browsehappy.com/browsers/' title='Navega Feliz =)'><img src='http://tricubo.com/wp-content/themes/tricubo/imagens/browsehappy.png' alt='Navega Feliz =)' /></a>
+		<a href='http://whos.amung.us/show/gj90qi86'><img src='http://whos.amung.us/swidget/gj90qi86.gif' alt='Utilizadores Online' width='80' height='15' /></a>
+
+		<a href='http://tricubo.com' title='Hospedado no Tricubo'><img src='http://tricubo.com/wp-content/themes/tricubo/imagens/tricubo_banner.png' alt='Hospedado no Tricubo' title='Hospedado no Tricubo' /></a>
+		<img src='http://tricubo.com/wp-content/themes/tricubo/imagens/portugal.png' alt='Feito em Portugal' title='Feito em Portugal' />
+								</p>
+								</div> <!-- end #banners -->
+
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-3043236-2");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		</script>
 
     </div> <!-- /footer -->
 
