@@ -8,8 +8,8 @@
     <meta name="author" lang="en" content="joelcalado@gmail.com" />
     <meta name="copyright" lang="en" content="Webdesign: Nuvio [www.nuvio.cz]; e-mail: ahoj@nuvio.cz" />
 
-    <meta name="description" content="..." />
-    <meta name="keywords" content="..." />
+    <meta name="description" content="Agregador de blogs em Português" />
+    <meta name="keywords" content="Agregador, planeta, blogs, rss, feeds" />
 
 	<script type="text/javascript" src="/js/jquery.js"></script>
 	<script type="text/javascript" src="/js/jquery.innerfade.js"></script>
@@ -34,6 +34,8 @@
     <link rel="stylesheet" media="print" type="text/css" href="/css/print.css" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/superfish.css" />
 
+	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/Planetuga" title="RSS Feed">
+
 
     <title><? echo "$title_for_layout"; ?></title>
 </head>
@@ -45,7 +47,7 @@
     <!-- Header -->
     <div id="header">
 
-        <h1 id="logo"><a href="/" title="[Go to homepage]"><span></span>Planetuga</a></h1>
+        <h1 id="logo"><a href="/" title="[Go to homepage]"><span></span><? echo Configure::read('Site.name'); ?></a></h1>
         <hr class="noscreen" />          
 
     </div> <!-- /header -->
@@ -60,6 +62,16 @@
             <li><a href="/users"><? __('Users') ?></a></li>
             <li><a href="/feeds"><? __('Feeds') ?></a></li>
             <li><a href="/posts/archive"><? __('Archive') ?></a></li>
+
+			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "2" || $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
+				
+			<li><a href="#"><? __('Profile')?></a>
+				<ul>
+					<li><a href="/users/changepassword"><? __('Change Password') ?></a></li>
+					<li><a href="/users/avatar"><? __('Change Avatar')?></a></li>
+				</ul>	
+			</li>
+			<? } ?>
 
 			<? if (isset($_SESSION["Auth"]["User"]["group_id"]) && $_SESSION["Auth"]["User"]["group_id"] == "1") { ?>
 
@@ -81,8 +93,15 @@
 					<li>
 						<a href="/admin/users"><? __('Users')?></a>
 						<ul>
-							<li><a href="/admin/users/index"><? __('List Users')?></a></li>
-							<li><a href="/admin/users/add"><? __('Add User')?></a></li>
+							<li><a href="/admin/users/index"><? __('List')?></a></li>
+							<li><a href="/admin/users/add"><? __('Add')?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/admin/feeds"><? __('Feeds')?></a>
+						<ul>
+							<li><a href="/admin/feeds/index"><? __('List Feeds')?></a></li>
+							<li><a href="/admin/feeds/add"><? __('Add Feed')?></a></li>
 						</ul>
 					</li>
 					<li>
@@ -168,7 +187,7 @@
                 <h4 class="margin">RSS</h4>
                 
                 <p class="nom">
-                    <a href="/feed" class="rss"><? __('Articles') ?></a><br />
+                    <a href="http://feeds.feedburner.com/Planetuga" class="rss"><? __('Articles') ?></a><br />
                 </p>
                
 				<h4 class="login">Login</h4>
@@ -213,7 +232,17 @@
         <p class="f-right" style="color:white"><a href="http://www.nuviotemplates.com/" style="color:white">Free web templates</a> by <a style="color:white" href="http://www.nuvio.cz/">Nuvio</a></p>
         <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
 
-        <p>Copyright &copy;&nbsp;2008 <strong><a href="#">Planetuga</a></strong>, Código: &copy;&nbsp;2008 <strong><a href="http://www.joelcalado.com">Joel Calado</a></strong></p>
+        <p>Copyright &copy;&nbsp;2008 <strong><a href="<? echo Configure::read('Site.url'); ?>"><? echo Configure::read('Site.name'); ?></a></strong>, Código: &copy;&nbsp;2008 <strong><a href="http://www.joelcalado.com">Joel Calado</a></strong></p>
+
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-3043236-2");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		</script>
 
     </div> <!-- /footer -->
 
