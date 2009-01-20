@@ -93,7 +93,6 @@ class PostsController extends AppController {
 	        if (isset($this->passedArgs)) { 
 
 	            $input = $_GET["q"];
-	            App::import('Sanitize'); 
 	            $q = Sanitize::escape($input); 
 
 	            $conditions = array("Post.title LIKE '%$q%' OR Post.content LIKE '%$q%'"); 
@@ -123,6 +122,8 @@ class PostsController extends AppController {
 
 
 	function feed(){ 
+
+		$this->layout = "rss/default";
 
         $this->set('posts', $this->Post->find('all',array( 
 		    'order' => 'Post.created_at DESC',
@@ -237,7 +238,8 @@ class PostsController extends AppController {
 					$id = mysql_insert_id();
 
 					// Shorten the URL using tinyURL :)
-					//$shortlink = $this->Tinyurl->shorten("http://cake.planetuga.com/posts/view/$id");
+					// $url = Configure::read('Site.url');
+					//$shortlink = $this->Tinyurl->shorten("$url/posts/view/$id");
 					
 					// Tweet it
 					//$this->Twitter->status_update("$title - $shortlink");
