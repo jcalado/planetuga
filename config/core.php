@@ -40,7 +40,7 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 0);
+	Configure::write('debug', 3);
 /**
  * Application wide charset encoding
  */
@@ -229,4 +229,5 @@ Configure::write('Routing.admin', 'admin');
 	Configure::write('Config.language', "pt");	
 	Configure::write('Site.email','geral@planetuga.com');
 	Configure::write('Site.name','Planetuga');
+	Configure::write('Site.url','http://planetuga.com');
 ?>
