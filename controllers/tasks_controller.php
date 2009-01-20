@@ -79,6 +79,9 @@ class TasksController extends AppController {
 	function admin_add() {
 		if (!empty($this->data)) {
 			$this->Task->create();
+	
+			$this->data["Task"]["user_id"] = $this->Auth->user('id');
+		
 			if ($this->Task->save($this->data)) {
 				$this->Session->setFlash(__('The Task has been saved', true));
 				$this->redirect(array('action'=>'index'));
@@ -86,7 +89,8 @@ class TasksController extends AppController {
 				$this->Session->setFlash(__('The Task could not be saved. Please, try again.', true));
 			}
 		}
-		$users = $this->Task->User->find('list');
+		$conditions = array('conditions' => array('User.group_id' => '1'));
+		$users = $this->Task->User->find('list', $conditions);
 		$this->set(compact('users'));
 	}
 
