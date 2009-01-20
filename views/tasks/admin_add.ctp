@@ -3,12 +3,10 @@
 	<fieldset>
  		<legend><?php __('Add Task');?></legend>
 	<?php
-		echo $form->input('user_id');
-		echo $form->input('assigned_to');
-		echo $form->input('priority');
+		echo $form->input('assigned_to', array('options' => $users));
+		echo $form->input('priority', array('options' => array("1","2","3","4","5"), 'default' => '3'));
 		echo $form->input('subject');
 		echo $form->input('task');
-		echo $form->input('created_at');
 		echo $form->input('deadline');
 	?>
 	</fieldset>

@@ -14,7 +14,6 @@ echo $paginator->counter(array(
 	<th><?php echo $paginator->sort('priority');?></th>
 	<th><?php echo $paginator->sort('subject');?></th>
 	<th><?php echo $paginator->sort('task');?></th>
-	<th><?php echo $paginator->sort('created_at');?></th>
 	<th><?php echo $paginator->sort('deadline');?></th>
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
@@ -44,9 +43,6 @@ foreach ($tasks as $task):
 		</td>
 		<td>
 			<?php echo $task['Task']['task']; ?>
-		</td>
-		<td>
-			<?php echo $task['Task']['created_at']; ?>
 		</td>
 		<td>
 			<?php echo $task['Task']['deadline']; ?>
