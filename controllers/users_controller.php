@@ -196,33 +196,21 @@ class UsersController extends AppController
 	function changepassword() 
 	{ 
 	        if (!empty($this->data)) { 
-  
-	                $user = $this->User->find($this->User->id);
-//	print_r($user);
-	$passwd = $this->data['User']['old_password'];
+				
+				$userid 	=  $this->Auth->user('id');
+				$username 	=  $this->Auth->user('username');
+				
+				$newdata['User']['username'] = $username;
+				$newdata['User']['password'] = $this->data['User']['password'];
+				$newhashes = $this->Auth->hashPasswords($newdata);
 	
-	$olddata['User']['username'] = $user['User']['username'];
-	$olddata['User']['password'] = $this->data['User']['old_password'];
-	$olddata['User']['repeat_password'] = $this->data['User']['repeat_password'];
-	$hashedPasswords = $this->Auth->hashPasswords($olddata);
-	
-	$newdata['User']['username'] = $user['User']['username'];
-	$newdata['User']['password'] = $this->data['User']['password'];
-	$hashem = $this->Auth->hashPasswords($newdata);
-	
-	print_r($hashem);
-	
-	                if($this->data['User']['password'] != $user['User']['password']) { 
-	                        $this->User->invalidate('old_password', 'Your old password is invalid'); 
-	                } 
 	                if($this->data['User']['password'] != $this->data['User']['repeat_password']){ 
 	                        $this->User->invalidate('password', 'Your passwords do not match'); 
 	                        $this->User->invalidate('repeat_password', 'Your passwords do not match');
 					} else { 
-							echo "WIN!";
-	                        $this->data['User']['id'] = $user['User']['id'];
-						//	$this->data['User']['username'] = $olddata['User']['username'];
-							$this->data['User']['password'] = $hashem['User']['password'];
+	                        $this->data['User']['id'] = $userid;
+						    $this->data['User']['username'] = $username;
+							$this->data['User']['password'] = $newhashes['User']['password'];
 					}                               
 	                if ($this->User->save($this->data)){ 
 	                        $this->flash('Password updated, please login again.','/users/logout'); 
