@@ -3,6 +3,7 @@ class TasksController extends AppController {
 
 	var $name = 'Tasks';
 	var $helpers = array('Html', 'Form');
+	var $components = array('Email');
 
 	function index() {
 		$this->Task->recursive = 0;
@@ -83,6 +84,13 @@ class TasksController extends AppController {
 			$this->data["Task"]["user_id"] = $this->Auth->user('id');
 		
 			if ($this->Task->save($this->data)) {
+				
+				// Mail the user the task was assigned to
+				$this->Email->from    = Configure::read('Site.name') . " <" . Configure::read('Site.email') . ">";
+				$this->Email->to    = User::get('email');
+				$this->Email->subject = __('New Task', true);
+				$this->Email->send(__('There is a new task waiting for you.', true));
+		
 				$this->Session->setFlash(__('The Task has been saved', true));
 				$this->redirect(array('action'=>'index'));
 			} else {
