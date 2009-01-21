@@ -215,16 +215,21 @@ class PostsController extends AppController {
 								$category .= ",";
 
 							}
-						}
+					}
 
 					$category = addslashes($category);
 					$content	= $item->get_content();
 					$content	= addslashes($content);
 
-				// Slashes
+					// If there is no title, attribute title "-"
+					if ($title = null) {
+						$title = "-"
+					}
 
-				$title      = addslashes($title);
-				$slug		= $this->Post->createSlug($title);
+					$title      = addslashes($title);
+					$slug		= $this->Post->createSlug($title);
+				
+
 
 
 				// Check if it already exists using the permalink
