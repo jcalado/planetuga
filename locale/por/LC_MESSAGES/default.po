@@ -186,6 +186,9 @@ msgstr 	"Criado em"
 msgid	"Deadline" 
 msgstr 	"Data Limite"
 
+msgid	"There is a new task waiting for you." 
+msgstr 	"Existe uma nova tarefa para si."
+
 msgid	"Add Announce" 
 msgstr 	"Novo Anúncio"
 
