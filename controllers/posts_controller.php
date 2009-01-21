@@ -221,10 +221,6 @@ class PostsController extends AppController {
 					$content	= $item->get_content();
 					$content	= addslashes($content);
 
-					// If there is no title, attribute title "-"
-					if ($title = null) {
-						$title = "-"
-					}
 
 					$title      = addslashes($title);
 					$slug		= $this->Post->createSlug($title);
