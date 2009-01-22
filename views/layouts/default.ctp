@@ -1,3 +1,15 @@
+<?php 
+
+// Screw licenses.  This is too trivial.  Use this code any way you want. 
+
+define('MOBILE_SITE_URL', 'http://iphone.planetuga.com'); 
+if(strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== FALSE || 
+   strpos($_SERVER['HTTP_USER_AGENT'], 'iPod') !== FALSE) { 
+
+    header("Location: " . MOBILE_SITE_URL);     
+} 
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
