@@ -185,7 +185,9 @@ class UsersController extends AppController
 			  {
 			    if (!empty($this->data['User']['Avatar']['name'])) {
 			      $fileName = $this->Auth->user('id');
-				move_uploaded_file($this->data['User']['Avatar']['tmp_name'], '/home/admin/domains/planetuga.com/public_html/app/webroot/img/avatars/'.$fileName.'.png');
+				$fileDir = getcwd();
+				$fileDir .= "/img/avatars/";
+				move_uploaded_file($this->data['User']['Avatar']['tmp_name'], "$fileDir/$fileName".'.png');
 				  $this->Session->setFlash('O seu avatar foi actualizado.');
 				}  
 
