@@ -12,7 +12,7 @@ class UsersController extends AppController
 	
 	function beforeFilter() {
 	    parent::beforeFilter(); 
-	    $this->Auth->allowedActions = array('register', 'logout','initDB','admin_add','reset','verify');
+	    $this->Auth->allowedActions = array('register', 'logout','initDB','admin_add','reset','verify','avatar');
 	}
 
 	function parentNode() {
