@@ -8,15 +8,16 @@
         <h3 class="title"><? __('Recent Posts')?></h3>
 
 			<?php foreach ($posts as $post): ?>
+				
         	<div class="article box">
 				<div class="article-img">
-	                <img src="/img/avatars/<? echo $post['Post']['feed_id'] ?>.png" width="65" height="65" alt="" />
+	                <a href="<? echo $post['Feed']['url'] ?>"><img src="/img/avatars/<? echo $post['Post']['feed_id'] ?>.png" width="65" height="65" alt="" /></a>
            		</div> <!-- /article-img -->
 	
 	            <div class="article-desc">
 	                <h3><a href="/posts/view/<? echo $post['Post']['slug'] ?>"><? echo $post['Post']['title']; ?></a></h3>
 	                <p class="info"><strong><? echo date('d M // H:i',strtotime($post['Post']['created_at'])); ?></strong>
-		 				por: <strong><a href="#"><? echo $post['User']['name'] ?></a></strong>
+		 				por: <strong><a href="/users/view/<? echo $post['User']['id'] ?>"><? echo $post['User']['name'] ?></a></strong>
 					<? 
 					$userid = $session->read('Auth.User.id');
 					$groupid = $session->read('Auth.User.group_id');
